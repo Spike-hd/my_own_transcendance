@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    restart: on-failure
+    expose:
+      - ?
+    networks:
+      - trenscendance
+    depends_on:
+      - ?
+
+
+  nginx:
+    container_name: nginx
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - "443:443"
+    networks:
+      - trenscendance
+    depends_on:
+      - frontend
+
+
+networks:
+  trenscendance:
+

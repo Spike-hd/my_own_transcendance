@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="../dist/output.css" rel="stylesheet" />
+<title>Transcendence</title>
+</head>
+
+<body class="m-0 p-0 h-screen overflow-hidden relative flex items-center justify-center">
+  <!-- Vidéo en arrière-plan -->
+  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
+    <source src="../assets/background.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Section centrée -->
+  <div class="z-10 flex flex-col items-center space-y-10">
+    <!-- Titre -->
+    <h1 class="md:text-[6rem] text-[4rem] font-[400] pointer-events-none drop-shadow-md text-white">
+      PONG
+    </h1>
+
+    <!-- Liens côte à côte sous le titre -->
+    <div class="flex gap-6">
+      <a href="/login" class="bg-white bg-opacity-10 hover:bg-opacity-30 text-black border border-white px-6 py-3 rounded-md transition-all duration-200">
+        Login
+      </a>
+      <a href="/new" class="bg-white bg-opacity-10 hover:bg-opacity-30 text-black border border-white px-6 py-3 rounded-md transition-all duration-200">
+        New player
+      </a>
+    </div>
+  </div>
+</body>
