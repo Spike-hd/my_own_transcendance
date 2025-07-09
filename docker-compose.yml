@@ -7,13 +7,8 @@ services:
       context: frontend
       dockerfile: Dockerfile
     restart: on-failure
-    expose:
-      - ?
     networks:
       - trenscendance
-    depends_on:
-      - ?
-
 
   nginx:
     container_name: nginx
@@ -23,6 +18,7 @@ services:
     restart: on-failure
     ports:
       - "443:443"
+      - "80:80"
     networks:
       - trenscendance
     depends_on:
