@@ -18,6 +18,6 @@ RUN		apt update -y && \
 COPY	nginx/proxy.conf /etc/nginx/proxy.conf
 COPY	frontend/conf/dist /var/www/html/dist
 COPY	frontend/conf/assets /var/www/html/assets
-COPY	frontend/conf/src /var/www/html/src
+COPY	frontend/conf/src /var/www/html/
 
 CMD		[ "nginx", "-g", "daemon off;" ]
