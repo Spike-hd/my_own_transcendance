@@ -12,9 +12,9 @@ RUN		apt update -y && \
 		mkdir -p /var/run/nginx && \
 		chmod -R 755 /var/www/html
 
-COPY	proxy.conf /etc/nginx/proxy.conf
-COPY	../frontend/conf/dist /var/www/html/
-COPY	../frontend/conf/assets /var/www/html/
-COPY	../frontend/conf/src /var/www/html/
+COPY	nginx/proxy.conf /etc/nginx/proxy.conf
+COPY	frontend/conf/dist /var/www/html/
+COPY	frontend/conf/assets /var/www/html/
+COPY	frontend/conf/src /var/www/html/
 
 CMD		[ "nginx", "-g", "daemon off;" ]
