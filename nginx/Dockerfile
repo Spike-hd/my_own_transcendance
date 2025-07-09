@@ -10,11 +10,14 @@ RUN		apt update -y && \
 		-out /etc/nginx/ssl/inception.crt \
 		-subj "/C=FR/ST=Occitanie/L=Perpignan/O=42/OU=42/CN=pong.fr" && \
 		mkdir -p /var/run/nginx && \
-		chmod -R 755 /var/www/html
+		chmod -R 755 /var/www/html && \
+		mkdir /var/www/html/dist && \
+		mkdir /var/www/html/assets && \
+		mkdir /var/www/html/src
 
 COPY	nginx/proxy.conf /etc/nginx/proxy.conf
-COPY	frontend/conf/dist /var/www/html/
-COPY	frontend/conf/assets /var/www/html/
-COPY	frontend/conf/src /var/www/html/
+COPY	frontend/conf/dist /var/www/html/dist
+COPY	frontend/conf/assets /var/www/html/assets
+COPY	frontend/conf/src /var/www/html/src
 
 CMD		[ "nginx", "-g", "daemon off;" ]
