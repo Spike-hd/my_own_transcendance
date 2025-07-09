@@ -12,6 +12,6 @@ RUN		apt update -y && \
 		mkdir -p /var/run/nginx && \
 		chmod -R 755 /var/www/html
 
-COPY	conf/nginx.conf /etc/nginx/nginx.conf
+COPY	proxy.conf /etc/nginx/proxy.conf
 
 CMD		[ "nginx", "-g", "daemon off;" ]
