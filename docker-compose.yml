@@ -22,6 +22,17 @@ services:
     depends_on:
       - frontend
 
+  user-service:
+    container_name: user-service
+    build:
+      context: user-service
+      dockerfile: Dockerfile
+    restart: on-failure
+    expose:
+      - "3000:3000"
+    networks:
+      - trenscendance
+
 
 networks:
   trenscendance:
